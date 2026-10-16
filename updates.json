@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "version": "2.1",
+  "version": "2.0",
   "baseVersion": "1.6.9g",
-  "build": 20100,
+  "build": 20000,
   "releasedAt": null,
-  "title": "Iron Man 3 REBUILT 2.1",
+  "title": "Iron Man 3 REBUILT 2.0",
   "summary": "New armors, restored content, offline features, and improvements to Iron Man 3.",
   "changelog": [
     "Added a brand-new set of armors!",
