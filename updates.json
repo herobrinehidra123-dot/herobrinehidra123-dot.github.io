@@ -6,7 +6,44 @@
   "releasedAt": null,
   "title": "Iron Man 3 REBUILT 2.0",
   "summary": "Based on version 1.6.9g. Release notes and download links will be published here.",
-  "changelog": [],
+  "changelog": [
+    ADDED A BRAND NEW SET OF ARMORS NEVER SEEN BEFORE IN THE GAME:
+    - MARK 30 Blue Steel, Unibeam with 10.0x Score!
+    - MARK 26 Gamma, Proton Shield with 8.0x Score!
+    - MARK 23 Shades, Frost Charge with 8.5x Score!
+    - MARK 21 Midas, AA Defense with 9.0x Score!
+    - Mark VIII, Striker Missile with 6.5x Score!
+    - MARK IX, Unibeam with 5.0x Score!
+    - Mark XIV, Frost Charge with 5.0x Score!
+    - Mark XII, Proton Shield with 7.5x Score!
+    - Mark X, AA Defense with 7.5x Score!
+    - Mark XI, AA Defense with 8.0x Score!
+    Changed name of "Woodlands" to "Woodlands Holiday Special"
+    Re-added the original version of "Woodlands"
+    Restored the original ISO-8 store, choose the amount of ISO-8 you need for free!
+    Added 49 Friends to the "Friend" section, gave fun beating their score!
+    Re-added original Tournaments, compete with bots and win exclusive prizes for free!
+    Added "Change Aspect Ratio" voice in the Settings page, choose your favorite aspect ratio (Original 16:9 or optimized 21:9 for modern devices" after re-launching the game
+    Tap the green Gameloft icon in the upper-right corner to check for updates and change logs immediately.
+    Bypassed license verification.
+    Fixed crashes when connected to the Internet.
+    Optimized auto-rotation support to allow the game to automatically rotate to match the device’s orientation, regardless of the system’s auto-rotation settings.
+    Fixed crashes when verifying age on certain devices.
+    Removed OBB dependency; now supports direct running without extraction.
+    Unlocked 60 FPS, forced ultra-high graphics quality and special effects.
+    Adjusted the unlock prices and methods for some armors; all original 32 armors can now be unlocked.
+    Enabled armor repair feature from previous game versions.
+    Re-added voice packs that were removed in previous versions of the game.
+    Improved texture quality for certain armors and scenes.
+    Optimized the ground rendering in snowy scenes within the “Woodlands” location.
+    Fixed rendering errors in certain scenes.
+    Fixed texture rendering errors for certain armors.
+    All armors are categorized by their types of SPECIAL WEAPON.
+    Supports maintaining an aspect ratio between 4:3 and 16:9 on devices that exceeds this limit, and automatically centers the image.
+    Added automatic notch detection for certain devices.
+    Removed the “New” label from the location “Dunes” in Shop.
+    Improved text quality for all languages.
+  ],
   "downloadUrl": null,
   "obbUrl": null,
   "installationNotes": ""
