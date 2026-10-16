@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<title>Iron Man 3 REBUILT — Updates</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#041521;color:#edfaff;font:16px/1.6 Arial,Helvetica,sans-serif}main{max-width:880px;margin:0 auto;padding:40px 24px}header{border-bottom:1px solid #24546a;padding-bottom:24px;margin-bottom:28px}.eyebrow{color:#68dcec;font-size:12px;letter-spacing:3px;text-transform:uppercase;margin:0 0 10px}h1{font-size:38px;line-height:1.15;margin:0}h1 span{color:#69e5fa;display:block;letter-spacing:5px;font-size:20px;margin-top:10px}header p{color:#9cb8c8;margin-bottom:0}.card{background:#092739;border:1px solid #215367;border-radius:14px;padding:28px;margin:18px 0}.badge{display:inline-block;border:1px solid #8f7d39;color:#ffe19a;border-radius:20px;padding:4px 12px;font-size:13px}.badge.good{color:#94f3c8;border-color:#307f68}.badge.new{color:#80edff;border-color:#3eaec4}h2{font-size:25px;line-height:1.3;margin:18px 0 8px}.muted{color:#9cb8c8}.summary{white-space:pre-line}.button{display:inline-block;border-radius:7px;background:#66e3f7;color:#03202b;text-decoration:none;padding:12px 20px;font-weight:bold;margin:8px 12px 0 0;border:0;font-size:16px;cursor:pointer}.secondary{background:#123d50;color:#edfaff;border:1px solid #397488}.actions{margin-top:24px}#retry{margin-top:12px}li{padding:5px 0}#notes{white-space:pre-line;border-top:1px solid #24546a;padding-top:16px}footer{font-size:12px;color:#82a0b3;margin:24px 0}a:focus,button:focus{outline:3px solid #ffe19a;outline-offset:4px}[hidden]{display:none!important}@media(max-width:500px){main{padding:24px 16px}.card{padding:20px}h1{font-size:30px}.button{display:block;text-align:center;margin-right:0}}
+</style>
+</head>
+<body>
+<main>
+<header><p class="eyebrow">Community project · Update channel</p><h1>IRON MAN 3<span>REBUILT</span></h1><p>Release notes, improvements and downloads.</p></header>
+<section class="card" aria-live="polite" aria-busy="true" id="release">
+<span class="badge" id="status">Checking updates…</span>
+<h2 id="title">Connecting to the update channel</h2>
+<p class="muted" id="version"></p>
+<p class="summary" id="summary">Please wait a moment.</p>
+<h3 id="changesTitle" hidden>What’s new</h3><ul id="changes" hidden></ul>
+<p id="notes" hidden></p>
+<div class="actions"><a class="button" id="download" hidden rel="noopener noreferrer">Download APK</a><a class="button secondary" id="obb" hidden rel="noopener noreferrer">Download game data</a></div>
+<p class="muted" id="pending" hidden>The download link has not been published yet.</p>
+<button type="button" class="button secondary" id="retry" hidden>Try again</button>
+</section>
+<noscript><p>Enable JavaScript to check updates, or open <a href="updates.json">the release information</a>.</p></noscript>
+<footer>Unofficial community project. Not affiliated with Gameloft or Marvel.</footer>
+</main>
+<script>
+(function(){
+ 'use strict';
+ function el(id){return document.getElementById(id);}
+ function text(id,value){el(id).textContent=value;}
+ function show(id,yes){el(id).hidden=!yes;}
+ function installedBuild(){var match=/(?:\?|&)installedBuild=(\d+)(?:&|$)/.exec(window.location.search);if(!match)return null;var n=Number(match[1]);return n>0&&n<=2147483647?n:null;}
+ function secureLink(value){return typeof value==='string'&&/^https:\/\/[^\s/]+(?:\/[^\s]*)?$/i.test(value)?value:null;}
+ function link(id,value){var url=secureLink(value);show(id,!!url);if(url)el(id).href=url;else el(id).removeAttribute('href');return !!url;}
+ function error(){el('release').setAttribute('aria-busy','false');text('status','Unable to check updates');el('status').className='badge';text('title','Connection unavailable');text('version','');text('summary','Check your connection and try again. You can close this page and keep playing.');show('retry',true);}
+ function render(data){
+  if(!data||data.schemaVersion!==1||typeof data.version!=='string'||typeof data.baseVersion!=='string'||typeof data.build!=='number'||data.build%1!==0||data.build<1||data.build>2147483647)throw new Error('Invalid release information');
+  var current=installedBuild(),status='Latest release',style='badge';
+  if(current!==null){if(data.build>current){status='Update available';style+=' new';}else if(data.build===current){status='You’re up to date';style+=' good';}else{status='Your build is newer than this release';}}
+  text('status',status);el('status').className=style;text('title',typeof data.title==='string'?data.title:'Iron Man 3 REBUILT '+data.version);
+  text('version','REBUILT '+data.version+' · Based on '+data.baseVersion+(typeof data.releasedAt==='string'?' · '+data.releasedAt:''));
+  text('summary',typeof data.summary==='string'?data.summary:'');
+  var list=el('changes');while(list.firstChild)list.removeChild(list.firstChild);
+  var changes=data.changelog instanceof Array?data.changelog:[];
+  for(var i=0;i<changes.length;i++){if(typeof changes[i]==='string'){var item=document.createElement('li');item.textContent=changes[i];list.appendChild(item);}}
+  show('changesTitle',!!list.firstChild);show('changes',!!list.firstChild);
+  var notes=typeof data.installationNotes==='string'?data.installationNotes:'';text('notes',notes);show('notes',!!notes);
+  var ready=link('download',data.downloadUrl);link('obb',data.obbUrl);show('pending',!ready);show('retry',false);el('release').setAttribute('aria-busy','false');
+ }
+ function load(){
+  el('release').setAttribute('aria-busy','true');text('status','Checking updates…');show('retry',false);show('download',false);show('obb',false);show('pending',false);show('changes',false);show('changesTitle',false);show('notes',false);
+  var xhr=new XMLHttpRequest(),finished=false;
+  var timer=window.setTimeout(function(){if(!finished){finished=true;xhr.abort();error();}},8000);
+  function done(){if(finished)return;finished=true;window.clearTimeout(timer);if(xhr.status!==200){error();return;}try{render(JSON.parse(xhr.responseText));}catch(e){error();}}
+  try{xhr.open('GET','updates.json?t='+new Date().getTime(),true);xhr.onreadystatechange=function(){if(xhr.readyState===4)done();};xhr.onerror=function(){if(!finished){finished=true;window.clearTimeout(timer);error();}};xhr.send(null);}catch(e){if(!finished){finished=true;window.clearTimeout(timer);error();}}
+ }
+ el('retry').onclick=load;load();
+}());
+</script>
+</body>
+</html>
