@@ -44,7 +44,8 @@
     "Removed the New label from Dunes in the location shop.",
     "Improved text quality across supported languages.",
     "Fixed installation conflicts with other Gameloft games.",
-    "Removed the Marvel logo video shown at startup."
+    "Removed the Marvel logo video shown at startup.",
+    "Removed the OBB dependency. All game data is now included in the APK.".
   ],
   "downloadUrl": null,
   "obbUrl": null,
