@@ -3,7 +3,7 @@
   "version": "2.1.0",
   "baseVersion": "1.6.9g",
   "build": 20100,
-  "minimumSupportedBuild": 20001,
+  "minimumSupportedBuild": 20100,
   "releasedAt": "2026-10-24",
   "title": "Iron Man 3 REBUILT 2.1.0",
   "summary": "New armors, restored content, offline features, and improvements to Iron Man 3.",
