@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "version": "2.2.0",
+  "version": "2.3.0",
   "baseVersion": "1.6.9g",
-  "build": 20200,
+  "build": 20300,
   "minimumSupportedBuild": 20200,
   "releasedAt": "2026-11-05",
-  "title": "Iron Man 3 REBUILT 2.2.0",
+  "title": "Iron Man 3 REBUILT 2.3.0",
   "summary": "New armors, restored content, offline features, 64-bit support and improvements to Iron Man 3.",
   "changelog": [
   "— REBUILT 2.2.0 —",
