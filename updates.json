@@ -3,7 +3,7 @@
   "version": "2.3.0",
   "baseVersion": "1.6.9g",
   "build": 20300,
-  "minimumSupportedBuild": 20200,
+  "minimumSupportedBuild": 20300,
   "releasedAt": "2026-11-20",
   "title": "Iron Man 3 REBUILT 2.3.0",
   "summary": "New armors, restored content, offline features, 64-bit support and improvements to Iron Man 3.",
@@ -136,7 +136,7 @@
     "Removed the Marvel logo video shown at startup.",
     "Removed the OBB dependency. All game data is now included in the APK."
   ],
-    "downloadUrl": "https://www.youtube.com/watch?v=ui78Z7zrd1Y",
+    "downloadUrl": "https://youtu.be/IXHXMFEFLSc",
     "obbUrl": null,
     "installationNotes": ""
 }
